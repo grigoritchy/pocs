@@ -120,7 +120,7 @@ __int64 __fastcall SplEnumForms(__int64 a1, unsigned int Level, __int64 pForm, u
 
 `SplEnumForms` function is invoked by `EnumForms` printer spooler api function. It enumerates forms that reserved in the printer object to show form information to the user. You can find detail infromation about `EnumForms` function at https://docs.microsoft.com/en-us/windows/win32/printdocs/enumforms. Microsoft have wrote documentation about that.
 
-Let's see how 'SplEnumForms' function works. Take a look at `SplEnumForms` function code above (I skipped some lines for brevity), while iterating `v13` structure variable until next pointer isn't exist, the string fields of `v13` structure variable calculates their length and saves in `length` variable then `lenght` variable is added in `total_length` variable (1).
+Let's see how `SplEnumForms` function works. Take a look at `SplEnumForms` function code above (I skipped some lines for brevity), while iterating `v13` structure variable until next pointer isn't exist, the string fields of `v13` structure variable calculates their length and saves in `length` variable then `lenght` variable is added in `total_length` variable (1).
 
 After iterating all of the `v13` structure variable then determines `total_length` variable, it checks at (2) whether `total_variable` is bigger than `cbBuf`. `cbBuf` is a size of `pForm` buffer, which is user-controllable size. As you might notice, `total_length` variable is unsigned int, it can be overflown thus (2) checks can be bypassed with a small size than `cbBuf`.
 
