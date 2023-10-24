@@ -2,7 +2,7 @@
 # Description
 An attacker can destroy LiquidityManager implementation contract, which can make LiquidityManager proxy contract is incapacitated.
 
-```sol
+```solidity
 contract LiquidityManager is Storage, AssetManager, DexWrapper, Admin, ExtensionProxy {
     receive() external payable {}
 
@@ -36,7 +36,7 @@ Fantom: https://ftmscan.com/address/0x9eA320d5b987e859D841e7624E5e845928bA2ADc
 
 What happens if an attacker become the owner of LiquidityManager's implementation contract?
 
-```sol
+```solidity
     function setDexWrapper(
         uint8 dexId,
         address adapter,
